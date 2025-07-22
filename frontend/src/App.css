@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #F5F7FA;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #0A192F;
+  margin-bottom: 3rem;
+}
+
+.project-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  font-size: 1.8rem;
+  color: #0A192F;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #4F4F4F;
+}
+
+.project-tech {
+  font-size: 0.95rem;
+  color: #757575;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  color: #64FFDA;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease;
+}
+
+.project-link:hover {
+  border-bottom: 2px solid #64FFDA;
+}
+
+/* App.css */
+.section {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
