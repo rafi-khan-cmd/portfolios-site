@@ -8,7 +8,7 @@ function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5050/projects')
+    fetch('http://52.15.224.99:5050/projects')
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error(err));
@@ -58,4 +58,3 @@ function App() {
 }
 
 export default App;
-
