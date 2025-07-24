@@ -18,3 +18,10 @@ __pycache__/
 # Docker
 pgdata/
 
+# .gitignore
+node_modules/
+build/
+.env
+*.log
+__pycache__/
+*.pyc

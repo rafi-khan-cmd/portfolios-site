@@ -22,7 +22,7 @@ app.get('/test-db', async (req, res) => {
 });
 
 // Fetch all projects
-app.get('/projects', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM projects');
     console.log('Fetched rows:', result.rows); // For debugging

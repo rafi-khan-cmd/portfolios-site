@@ -8,47 +8,62 @@ function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch('http://52.15.224.99:5050/projects')
-      .then((res) => res.json())
-      .then((data) => setProjects(data))
-      .catch((err) => console.error(err));
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('https://rafiulalamkhan.com/projects/');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('✅ Project data:', data);
+        setProjects(data);
+      } catch (error) {
+        console.error('❌ Error fetching projects:', error);
+      }
+    };
+
+    fetchProjects();
   }, []);
 
   return (
-    <div>
+    <div className="app">
       <Navbar />
 
       <main className="main-content">
         <section id="projects" className="section">
-          <h1 className="section-title">My Projects</h1>
-          {projects.length === 0 ? (
-            <p>No projects found.</p>
-          ) : (
-            <div className="projects-grid">
-              {projects.map((project) => (
-                <div className="project-card" key={project.id}>
-                  <h2 className="project-title">{project.title}</h2>
-                  <p className="project-description">{project.description}</p>
-                  <p className="project-tech">
-                    Tech Stack: {project.tech_stack}
-                  </p>
-                  <a
-                    className="project-link"
-                    href={project.repo_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub Repo
-                  </a>
-                </div>
-              ))}
-            </div>
-          )}
+          <div className="container">
+            <h1 className="section-title">My Projects</h1>
+            {projects.length === 0 ? (
+              <p className="no-projects">No projects found.</p>
+            ) : (
+              <div className="projects-grid">
+                {projects.map((project) => (
+                  <div className="project-card" key={project.id}>
+                    <h2 className="project-title">{project.title}</h2>
+                    <p className="project-description">{project.description}</p>
+                    <p className="project-tech">
+                      Tech Stack: {project.tech_stack}
+                    </p>
+                    <a
+                      className="project-link"
+                      href={project.repo_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub Repo
+                    </a>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </section>
 
         <section id="contact" className="section">
-          <h1 className="section-title">Contact Me</h1>
-          <Contact />
+          <div className="container">
+            <h1 className="section-title">Contact Me</h1>
+            <Contact />
+          </div>
         </section>
       </main>
 
